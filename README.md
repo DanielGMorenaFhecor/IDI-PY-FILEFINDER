@@ -2,7 +2,7 @@
 
 ## Goal of the Application
 
-The Network File List Application is designed to facilitate the task of listing all files with a specified extension from a connected network. It automates the process of iterating over different servers, directories, and files, and then compiles a comprehensive list of the selected files. Only directories and files with read permissions will be processed.
+The FILEFINDER Application is designed to facilitate the task of listing all files with a specified extension from a connected network. It automates the process of iterating over different servers, directories, and files, and then compiles a comprehensive list of the selected files. Only directories and files with read permissions will be processed.
 
 ## How to Use the Application
 
@@ -10,14 +10,14 @@ Follow these steps to effectively use the Network File List Application:
 
 ### Step 1: Download the Application
 
-- Download the `network-file-list.exe` executable file.
-- Also, download the `settings.ini` configuration file.
+- Download the `filefinder.exe` executable file from the Releases section in the GitHub page.
+- Also, download the `settings.ini` configuration file from the Releases section in the GitHub page.
 
 ### Step 2: Configure the `settings.ini` File
 
 Open the `settings.ini` file using a text editor and configure the following parameters:
 
-- **FileExtensions**: Specify the file extensions you want to list, separated by commas. For example, if you want to list all `.txt` and `.pdf` files, set it as follows:
+- **FileExtensions**: Specify the file extensions you want to list, separated by commas. For example, if you want to list all `.txt`, `.pdf` and `.jpg` files, set it as follows:
 
   ```
   FileExtensions = .txt,.pdf,.jpg
@@ -44,7 +44,7 @@ Open the `settings.ini` file using a text editor and configure the following par
 
 ### Step 3: Run the Application
 
-Execute the `network-file-list.exe` executable with the configured `settings.ini` file. The application will start scanning the network based on your specified parameters and will write the list of files into the result file you defined in `OutFile`.
+Execute the `filefinder.exe` executable with the configured `settings.ini` file. The application will start scanning the network based on your specified parameters and will write the list of files into the result file you defined in `OutFile`.
 
 **Note**: If you want to stop the scanning process at any time, you can press `CTRL+C` to interrupt it.
 
