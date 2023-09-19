@@ -1,4 +1,4 @@
-# Network File List Application
+# FILEFINDER: Network File List Application
 
 ## Goal of the Application
 
