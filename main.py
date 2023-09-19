@@ -14,11 +14,16 @@ def main() -> None:
 
     # Read settings
     config = configparser.ConfigParser()
-    config.read('settings.ini')
-    servers = config['DEFAULT']['Servers'].split(',')
-    exts = config['DEFAULT']['FileExt'].split(',')
-    outfile = config['DEFAULT']['OutFile']
-    verbose = config['DEFAULT'].getboolean('Verbose')
+    try:
+        config.read('settings.ini')
+        servers = config['DEFAULT']['Servers'].split(',')
+        exts = config['DEFAULT']['FileExt'].split(',')
+        outfile = config['DEFAULT']['OutFile']
+        verbose = config['DEFAULT'].getboolean('Verbose')
+    except Exception:
+        print('ERROR: could not load config file settings.ini')
+        input('Press any key to close...')
+        return
 
     # Open a file for the output
     with open(rf'{outfile}', 'w') as stream:
@@ -92,21 +97,21 @@ def print_result(filepath: str, stream: io.TextIOWrapper) -> None:
 
 def print_init_info():
     '''Prints initial logo info'''
-    print("========================FHECOR INGENIEROS CONSULTORES=========================")
-    print("==============================IDI-PY-FILEFINDER===============================")
-    print("     &&&&&&&&&&&&&&&&&&                                                       ")
-    print("     &&&&&&&&&&&&&&&&&&                                                       ")
-    print("     &&&&&&&&&&&&&&&&&&      %&&&&, &    /#  &&&&&  *&&&%   #&&&#   %&&&#     ")
-    print("     &&&&&&&&&&&&&&&&&&      %,     &    /#  &     &      *%     #/ %.  ))    ")
-    print("     &&&&&&&&&&&&&&&&&&      %,&&&  &&&&&/#  &,&&  &      *%     %* %. &.     ")
-    print("     &&&&&&&&&&&&&&&&&&      %,     %    /#  &     &       %.    %  %.  %     ")
-    print("     &&&&&&&&&&&&&&&&&&      %,     %    /#  &&&&&  %&&&%(  #&&&#   %.   %    ")
-    print("     &&&&&&&&&&&&&&&&&&                                                       ")
-    print("     &&&&&&&&&&&&&&&&&&                                                       ")
-    print("==============================================================================")
-    print("==============================================================================")
-    print("Daniel González de la Morena (dgm@fhecor.es)                                  ")
-    print("==============================================================================")
+    print("========================FHECOR INGENIEROS CONSULTORES=========================")  # noqa: E501
+    print("==============================IDI-PY-FILEFINDER===============================")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&                                                       ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&                                                       ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&      %&&&&, &    /#  &&&&&  *&&&%   #&&&#   %&&&#     ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&      %,     &    /#  &     &      *%     #/ %.  ))    ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&      %,&&&  &&&&&/#  &,&&  &      *%     %* %. &.     ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&      %,     %    /#  &     &       %.    %  %.  %     ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&      %,     %    /#  &&&&&  %&&&%(  #&&&#   %.   %    ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&                                                       ")  # noqa: E501
+    print("     &&&&&&&&&&&&&&&&&&                                                       ")  # noqa: E501
+    print("==============================================================================")  # noqa: E501
+    print("==============================================================================")  # noqa: E501
+    print("Daniel González de la Morena (dgm@fhecor.es)                                  ")  # noqa: E501
+    print("==============================================================================")  # noqa: E501
     print()
     print()
 

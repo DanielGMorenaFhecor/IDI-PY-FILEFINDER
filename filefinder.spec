@@ -1,5 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
-
+import shutil
 
 block_cipher = None
 
@@ -28,7 +28,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='main',
+    name='filefinder',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -41,4 +41,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['icon.ico'],
 )
+
+shutil.copyfile('settings.ini', '{0}/settings.ini'.format(DISTPATH))
